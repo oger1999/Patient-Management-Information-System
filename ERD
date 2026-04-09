@@ -1,0 +1,34 @@
+# Patient Management Information System (PMIS)
+
+## ERD Diagram
+
+```mermaid
+erDiagram
+
+PATIENT {
+    string patient_id PK
+    string full_name
+    int age
+    string gender
+    string diagnosis
+    double consultation_fee
+    date registration_date
+}
+
+GUARDIAN {
+    int guardian_id PK
+    string full_name
+    string phone
+    string relationship
+}
+
+PATIENT_GUARDIAN {
+    int id PK
+    string patient_id FK
+    int guardian_id FK
+}
+
+PATIENT ||--o{ PATIENT_GUARDIAN : has
+GUARDIAN ||--o{ PATIENT_GUARDIAN : linked_to
+```
+Add ERD diagram
